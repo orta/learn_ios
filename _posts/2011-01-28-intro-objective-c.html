@@ -1,0 +1,54 @@
+
+
+
+        <div class="slide">
+            <h2>iOS / Mac OS X we use objective-c. It's pretty crazy.</h2>
+            <p>Like C++ objects we use Header files. These files are a way of showing what the object will do, so you can quickly get an overview of responsibilities.</p>
+            <div class="incremental">
+
+                <h4 class="code_heading ">Car.h ( Obj-C Header )</h4>
+                {% highlight objc %}
+#import < Foundation/Foundation.h>
+
+@interface Car : NSObject(
+  // object variables go here
+  int speed;
+)
+
+// object functions ( or methods ) go outside
+-(void)drive;
+-(void)honk;
+
+@end
+                {% endhighlight %}
+                <p>After looking at this we can tell that a car has a speed variable, and a wheels variable, though we don't know what they are. Because we cannot set their values in the header.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Its complement is the implementation file.</h2>
+            
+            <h4 class="code_heading ">Car.m ( Obj-C Implementation )</h4>
+    {% highlight objc %}
+    #import "Car.h"
+
+    @implementation Car
+
+    -(id)init {
+        self = [super init];
+        speed = 10;
+        wheels = 4;
+        return self;
+    }
+
+    -(void) honk {
+        NSLog(@"Beep");
+    }
+
+    @end
+    {% endhighlight %}
+
+        
+        <p> NSLog() is like cout, or like println it lets us write things out to the debug log.</p>
+
+        </div>

@@ -1,0 +1,58 @@
+
+
+        <div class="slide">
+            <h1>Object Oriented Programming 101</h1>
+            <h2>Classes are great. We use them to model things.</h2>
+            <p>Wanna make a chess game? Then you'll probably want to create a class for each of the types of pieces on the board, and a class for the board board itself.</p>
+            <p>In our last examples: String is a class.</p>
+
+            <p>Objects are great because we can have lots of similar objects either inherit a lot of behavior from each other, for example. You may want to make a driving game. You can make a car object, then have other cars inherit from it and do more with the object.</p>
+
+            <h4 class="code_heading">Car object (psudo code)</h4>
+            <div class="highlight"><pre><code class="cpp"><span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="n">drive</span><span class="p">(){</span>
+        <span class="n">go_forwards</span><span class="p">(</span> <span class="n">speed</span> <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">honk</span><span class="p">(){</span>
+        <span class="n">say</span> <span class="s">&quot;beeep&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+            
+</code></pre>
+</div>
+
+        </div>
+
+        <div class="slide">
+            <p>We can take the car object and extend it to make different types of cars without having to re-write large chunks of code.</p>
+
+            <h4 class="code_heading">Truck object (psudo code)</h4>
+            <pre class="brush: cpp">
+<div class="highlight"><pre><code class="cpp"><span class="k">class</span> <span class="nc">Truck</span> <span class="n">extends</span> <span class="n">Car</span> <span class="p">{</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="n">honk</span><span class="p">(){</span>
+        <span class="n">say</span> <span class="s">&quot;HOOOOONKKKKK&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+            </pre>
+            <p>or a super fast car</p>
+            <h4 class="code_heading">Ortamobile object (psudo code)</h4>
+            <div class="highlight"><pre><code class="cpp"><span class="k">class</span> <span class="nc">Ortamobile</span> <span class="n">extends</span> <span class="n">Car</span> <span class="p">{</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="mi">200</span>
+
+    <span class="n">honk</span><span class="p">(){</span>
+        <span class="n">say</span> <span class="s">&quot;neeeawwwnggggg&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+            
+</code></pre>
+</div>
+        </div>

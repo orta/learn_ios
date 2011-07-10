@@ -1,3 +1,7 @@
+---
+layout: nil
+---
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,17 +22,11 @@
         <link type="text/css" rel="stylesheet" href="assets/css/slippy.css"/>
         <!-- Slippy theme -->
         <link type="text/css" rel="stylesheet" href="assets/css/slippy-pure.css"/>
-        <!-- Syntax highlighting core file  -->
-        <script type="text/javascript" src="assets/highlighter/shCore.js"></script>
-        <!-- Syntax highlighting brushes, remove those you don't need -->
-        <script type="text/javascript" src="assets/highlighter/shBrushCpp.js"></script>
-        <script type="text/javascript" src="assets/highlighter/shBrushJava.js"></script>
-        <script type="text/javascript" src="assets/highlighter/shBrushObjectiveC.js"></script>
-        <!-- Syntax highlighting styles-->
-        <link type="text/css" rel="stylesheet" href="assets/highlighter/shCore.css"/>
-        <link type="text/css" rel="stylesheet" href="assets/highlighter/shThemeMidnight.css"/>
+
         <link rel="stylesheet" href="http://orta.github.com/assets/fonts/stylesheet.css">
         <link rel="stylesheet" href="http://orta.github.com/assets/stylesheets/style.css">
+        <link rel="stylesheet" href="http://orta.github.com/assets/stylesheets/syntax.css">
+
         <style>
             h1{
                 font-size : 2em;
@@ -36,6 +34,9 @@
             
             h1, h2, li, p{
                 margin-bottom: 1em;
+            }
+            .code_heading{
+                margin-bottom: -3px !important;
             }
 
         </style>
@@ -68,153 +69,11 @@
         </style>
     </head>
     <body>
-        <div class="slide">
-            <h1>Learning iPhone programming</h1>
-            <h2></h2>
-            <ul>
-                <li>For this you must know some programming, or be pretty damn smart. We'll be going fast, leaving a lot of dead projects behind us. Don't worry. There'll be more to take their place.</li>
-                
-                <li>Press left / right to move through pages.</li>
-            </ul>
-            <img src="http://orta.github.com/assets/images/iphone/buttons.jpg">
-        </div>
-
-        <div class="slide">
-            <h1>So let's look at what you know</h1>
-
-            <h4 class="code_heading">Cpp - Objects Optional</h4>
-            <pre class="brush: cpp">
-            #include < iostream>
-
-            int main()
-            {
-                const std::string message = "Hello, world";
-                std::cout << message;
-                return 0;
-            }
-            </pre>
-            <p>or</p>
-            <h4 class="code_heading">Java - Forced use of Objects</h4>
-            <pre class="brush: java">
-                class myfirstjavaprog
-                {  
-                    public static void main(String args[]) {
-                        System.out.println("Hello World!");
-                    }
-                }
-            </pre>
-
-        </div>
-
-        <div class="slide">
-            <h1>Object Oriented Programming 101</h1>
-            <h2>Classes are great. We use them to model things.</h2>
-            <p>Wanna make a chess game? Then you'll probably want to create a class for each of the types of pieces on the board, and a class for the board board itself.</p>
-            <p>In our last examples: String is a class.</p>
-
-            <p>Objects are great because we can have lots of similar objects either inherit a lot of behavior from each other, for example. You may want to make a driving game. You can make a car object, then have other cars inherit from it and do more with the object.</p>
-
-            <h4 class="code_heading">Car object (psudo code)</h4>
-            <pre class="brush: cpp">
-                class Car {
-                    wheels = 4
-                    speed = 10
-
-                    drive(){
-                        go_forwards( speed )
-                    }
-
-                    honk(){
-                        say "beeep"
-                    }
-                }
-            </pre>
-
-        </div>
-
-        <div class="slide">
-            <p>We can take the car object and extend it to make different types of cars without having to re-write large chunks of code.</p>
-
-            <h4 class="code_heading">Truck object (psudo code)</h4>
-            <pre class="brush: cpp">
-                class Truck extends Car {
-                    speed = 5
-
-                    honk(){
-                        say "HOOOOONKKKKK"
-                    }
-                }
-            </pre>
-            <p>or a super fast car</p>
-            <h4 class="code_heading">Ortamobile object (psudo code)</h4>
-            <pre class="brush: cpp">
-                class Ortamobile extends Car {
-                    speed = 200
-
-                    honk(){
-                        say "neeeawwwnggggg"
-                    }
-                }
-            </pre>
-        </div>
-
-        <div class="slide">
-            <h2>iOS / Mac OS X we use objective-c. It's pretty crazy.</h2>
-            <p>Like C++ objects we use Header files. These files are a way of showing what the object will do, so you can quickly get an overview of responsibilities.</p>
-            <div class="incremental">
-
-                <h4 class="code_heading ">Car.h ( Obj-C Header )</h4>
-                <pre class=" brush: objc">
-                    #import < Foundation/Foundation.h>
-
-                    @interface Car : NSObject(
-                      // object variables go here
-                      int speed;
-                    )
-
-                    // object functions ( or methods ) go outside
-                    -(void)drive;
-                    -(void)honk;
-
-                    @end
-                </pre>
-                <p>After looking at this we can tell that a car has a speed variable, and a wheels variable, though we don't know what they are. Because we cannot set their values in the header.</p>
-            </div>
-        </div>
-
-        <div class="slide">
-            <h2>Its complement is the implementation file.</h2>
-            
-            <h4 class="code_heading ">Car.m ( Obj-C Implementation )</h4>
-            <pre class=" brush: objc">
-            #import "Car.h"
-
-            @implementation Car
-
-            -(id)init {
-                self = [super init];
-                speed = 10;
-                wheels = 4;
-                return self;
-            }
-
-            -(void) honk {
-                NSLog(@"Beep");
-            }
-
-            @end
-        </pre>
-        
-        <p> NSLog() is like cout, or like println it lets us write things out to the debug log.</p>
-
-        </div>
-
+        {% for slide in site.posts %}
+            <!-- {{ slide.title }} --> 
+            {{ slide.content }}
+        {% endfor %}
         <div class="layout" data-name="default">
-            <content></content>
-            
-        </div>
-
-        <div class="layout nofooter" data-name="alt">
             <content></content>
         </div>
     </body>

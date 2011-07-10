@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <!-- Slide meta data, remove/edit as you see fit -->
+        <title>Learn iPhone from ~scratch</title>
+        <meta name="generator" content="Sublime Editor 2" />
+        <meta name="author" content="orta therox" />
+        <meta name="company" content="http://ortatherox.com" />
+        <meta name="email" content="orta.therox@gmail.com" />
+        <meta name="date" content="Sun 10 Jul 2011 18:54:20 EDT" />
+        <meta name="venue" content="The Internets" />
+        <!-- Slippy core file and dependencies -->
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.history.js"></script>
+        <script type="text/javascript" src="assets/js/slippy.js"></script>
+        <!-- Slippy structural styles -->
+        <link type="text/css" rel="stylesheet" href="assets/css/slippy.css"/>
+        <!-- Slippy theme -->
+        <link type="text/css" rel="stylesheet" href="assets/css/slippy-pure.css"/>
+
+        <link rel="stylesheet" href="http://orta.github.com/assets/fonts/stylesheet.css">
+        <link rel="stylesheet" href="http://orta.github.com/assets/stylesheets/style.css">
+        <link rel="stylesheet" href="http://orta.github.com/assets/stylesheets/syntax.css">
+
+        <style>
+            h1{
+                font-size : 2em;
+            }
+            
+            h1, h2, li, p{
+                margin-bottom: 1em;
+            }
+            .code_heading{
+                margin-bottom: -3px !important;
+            }
+
+        </style>
+        <!-- Slippy init code -->
+        <script type="text/javascript">
+            $(function() {
+                $(".slide").slippy({
+                    // settings go here
+                    // possible values are:
+                    //  - animLen, duration for default animations (0 = disabled)
+                    //  - animInForward, receives a slide and animates it
+                    //  - animInRewind, receives a slide and animates it
+                    //  - animOutForward, receives a slide and animates it
+                    //  - animOutRewind, receives a slide and animates it
+                    //  - baseWidth, defines the base for img resizing, if you don't want only
+                    //    full-width images, specify this as the pixel width of a slide so that
+                    //    images are scaled properly (default is 620px wide)
+                    //  - ratio, defines the width/height ratio of the slides, defaults to 1.3 (620x476)
+                    //  - margin, the fraction of screen to use as slide margin, defaults to 0.15
+                });
+                SyntaxHighlighter.all();
+            });
+        </script>
+        <!-- Custom style for this deck -->
+        <style type="text/css">
+            .slide.nofooter {
+                border: 0;
+                background: 0;
+            }
+        </style>
+    </head>
+    <body>
+        
+            <!-- First5slides --> 
+            <div class="slide">
+    <h1>Learning iPhone programming</h1>
+    <h2></h2>
+    <ul>
+        <li>For this you must know some programming, or be pretty damn smart. We'll be going fast, leaving a lot of dead projects behind us. Don't worry. There'll be more to take their place.</li>
+        
+        <li>Press left / right to move through pages.</li>
+    </ul>
+    <img src="http://orta.github.com/assets/images/iphone/buttons.jpg">
+</div>
+
+
+<div class="slide">
+    <h1>So let's look at what you know</h1>
+
+    <h4 class="code_heading">Cpp - Objects Optional</h4>
+    <div class="highlight"><pre><code class="cpp"><span class="cp">	#include &lt; iostream&gt;</span>
+
+	<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+	<span class="p">{</span>
+	    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Hello, world&quot;</span><span class="p">;</span>
+	    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">message</span><span class="p">;</span>
+	    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	
+</code></pre>
+</div>
+	<p>or</p>
+	<h4 class="code_heading">Java - Forced use of Objects</h4>
+	<div class="highlight"><pre><code class="java">	<span class="kd">class</span> <span class="nc">myfirstjavaprog</span>
+	<span class="o">{</span>  
+	    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>
+	        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span>
+	    <span class="o">}</span>
+	<span class="o">}</span>
+    
+</code></pre>
+</div>
+
+</div>
+        
+            <!-- Psuedo Classes --> 
+            
+
+        <div class="slide">
+            <h1>Object Oriented Programming 101</h1>
+            <h2>Classes are great. We use them to model things.</h2>
+            <p>Wanna make a chess game? Then you'll probably want to create a class for each of the types of pieces on the board, and a class for the board board itself.</p>
+            <p>In our last examples: String is a class.</p>
+
+            <p>Objects are great because we can have lots of similar objects either inherit a lot of behavior from each other, for example. You may want to make a driving game. You can make a car object, then have other cars inherit from it and do more with the object.</p>
+
+            <h4 class="code_heading">Car object (psudo code)</h4>
+            <div class="highlight"><pre><code class="cpp"><span class="k">class</span> <span class="nc">Car</span> <span class="p">{</span>
+    <span class="n">wheels</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="n">drive</span><span class="p">(){</span>
+        <span class="n">go_forwards</span><span class="p">(</span> <span class="n">speed</span> <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">honk</span><span class="p">(){</span>
+        <span class="n">say</span> <span class="s">&quot;beeep&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+            
+</code></pre>
+</div>
+
+        </div>
+
+        <div class="slide">
+            <p>We can take the car object and extend it to make different types of cars without having to re-write large chunks of code.</p>
+
+            <h4 class="code_heading">Truck object (psudo code)</h4>
+            <pre class="brush: cpp">
+<div class="highlight"><pre><code class="cpp"><span class="k">class</span> <span class="nc">Truck</span> <span class="n">extends</span> <span class="n">Car</span> <span class="p">{</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="n">honk</span><span class="p">(){</span>
+        <span class="n">say</span> <span class="s">&quot;HOOOOONKKKKK&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+            </pre>
+            <p>or a super fast car</p>
+            <h4 class="code_heading">Ortamobile object (psudo code)</h4>
+            <div class="highlight"><pre><code class="cpp"><span class="k">class</span> <span class="nc">Ortamobile</span> <span class="n">extends</span> <span class="n">Car</span> <span class="p">{</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="mi">200</span>
+
+    <span class="n">honk</span><span class="p">(){</span>
+        <span class="n">say</span> <span class="s">&quot;neeeawwwnggggg&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+            
+</code></pre>
+</div>
+        </div>
+        
+            <!-- Intro Objective C --> 
+            
+
+
+        <div class="slide">
+            <h2>iOS / Mac OS X we use objective-c. It's pretty crazy.</h2>
+            <p>Like C++ objects we use Header files. These files are a way of showing what the object will do, so you can quickly get an overview of responsibilities.</p>
+            <div class="incremental">
+
+                <h4 class="code_heading ">Car.h ( Obj-C Header )</h4>
+                <div class="highlight"><pre><code class="objc"><span class="cp">#import &lt; Foundation/Foundation.h&gt;</span>
+
+<span class="k">@interface</span> <span class="nc">Car</span> : <span class="nc">NSObject</span><span class="p">(</span>
+  <span class="c1">// object variables go here</span>
+  <span class="kt">int</span> <span class="n">speed</span><span class="p">;</span>
+<span class="p">)</span>
+
+<span class="c1">// object functions ( or methods ) go outside</span>
+<span class="o">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">drive</span><span class="p">;</span>
+<span class="o">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">honk</span><span class="p">;</span>
+
+<span class="k">@end</span>
+                
+</code></pre>
+</div>
+                <p>After looking at this we can tell that a car has a speed variable, and a wheels variable, though we don't know what they are. Because we cannot set their values in the header.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Its complement is the implementation file.</h2>
+            
+            <h4 class="code_heading ">Car.m ( Obj-C Implementation )</h4>
+    <div class="highlight"><pre><code class="objc"><span class="cp">    #import &quot;Car.h&quot;</span>
+
+    <span class="k">@implementation</span> <span class="nc">Car</span>
+
+    <span class="o">-</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">init</span> <span class="p">{</span>
+        <span class="n">self</span> <span class="o">=</span> <span class="p">[</span><span class="n">super</span> <span class="n">init</span><span class="p">];</span>
+        <span class="n">speed</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">wheels</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">honk</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Beep&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">@end</span>
+    
+</code></pre>
+</div>
+
+        
+        <p> NSLog() is like cout, or like println it lets us write things out to the debug log.</p>
+
+        </div>
+        
+        <div class="layout" data-name="default">
+            <content></content>
+        </div>
+    </body>
+</html>
