@@ -1,75 +1,204 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <!-- Slide meta data, remove/edit as you see fit -->
+        <title>Learn iPhone from ~scratch</title>
+        <meta name="generator" content="Sublime Editor 2" />
+        <meta name="author" content="orta therox" />
+        <meta name="company" content="http://ortatherox.com" />
+        <meta name="email" content="orta.therox@gmail.com" />
+        <meta name="date" content="Sun 10 Jul 2011 18:54:20 EDT" />
+        <meta name="venue" content="The Internets" />
+        <!-- Slippy core file and dependencies -->
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.history.js"></script>
+        <script type="text/javascript" src="assets/js/slippy.js"></script>
+        <!-- Slippy structural styles -->
+        <link type="text/css" rel="stylesheet" href="assets/css/slippy.css"/>
+        <!-- Slippy theme -->
+        <link type="text/css" rel="stylesheet" href="assets/css/slippy-pure.css"/>
+        <!-- Syntax highlighting core file  -->
+        <script type="text/javascript" src="assets/highlighter/shCore.js"></script>
+        <!-- Syntax highlighting brushes, remove those you don't need -->
+        <script type="text/javascript" src="assets/highlighter/shBrushCpp.js"></script>
+        <script type="text/javascript" src="assets/highlighter/shBrushJava.js"></script>
+        <script type="text/javascript" src="assets/highlighter/shBrushObjectiveC.js"></script>
+        <!-- Syntax highlighting styles-->
+        <link type="text/css" rel="stylesheet" href="assets/highlighter/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="assets/highlighter/shThemeMidnight.css"/>
+        <link rel="stylesheet" href="http://orta.github.com/assets/fonts/stylesheet.css">
+        <link rel="stylesheet" href="http://orta.github.com/assets/stylesheets/style.css">
+        <style>
+            h1{
+                font-size : 2em;
+            }
+            
+            h1, h2, li, p{
+                margin-bottom: 1em;
+            }
+        </style>
+        <!-- Slippy init code -->
+        <script type="text/javascript">
+            $(function() {
+                $(".slide").slippy({
+                    // settings go here
+                    // possible values are:
+                    //  - animLen, duration for default animations (0 = disabled)
+                    //  - animInForward, receives a slide and animates it
+                    //  - animInRewind, receives a slide and animates it
+                    //  - animOutForward, receives a slide and animates it
+                    //  - animOutRewind, receives a slide and animates it
+                    //  - baseWidth, defines the base for img resizing, if you don't want only
+                    //    full-width images, specify this as the pixel width of a slide so that
+                    //    images are scaled properly (default is 620px wide)
+                    //  - ratio, defines the width/height ratio of the slides, defaults to 1.3 (620x476)
+                    //  - margin, the fraction of screen to use as slide margin, defaults to 0.15
+                });
+                SyntaxHighlighter.all();
+            });
+        </script>
+        <!-- Custom style for this deck -->
+        <style type="text/css">
+            .slide.nofooter {
+                border: 0;
+                background: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide">
+            <h1>Learning iPhone programming</h1>
+            <h2></h2>
+            <ul>
+                <li>For this you must know some programming, or be pretty damn smart. We'll be going fast, leaving a lot of dead projects behind us. Don't worry. There'll be more to take their place.</li>
+                
+                <li>Press left / right to move through pages.</li>
+            </ul>
+            <img src="http://orta.github.com/assets/images/iphone/buttons.jpg">
+        </div>
 
-  <title>orta/Learn-iPhone @ GitHub</title>
+        <div class="slide">
+            <h1>So let's look at what you know</h1>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #681c8d;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
+            <h4 class="code_heading">Cpp - Objects Optional</h4>
+            <pre class="brush: cpp">
+    #include < iostream >
+
+    int main()
+    {
+        const std::string message = "Hello, world";
+        std::cout << message;
+        return 0;
     }
-    #container {
-      margin: 0 auto;
-      width: 700px;
+            </pre>
+            <p>or</p>
+            <h4 class="code_heading">Java - Forced use of Objects</h4>
+            <pre class="brush: java">
+    class myfirstjavaprog
+    {  
+        public static void main(String args[]) {
+            System.out.println("Hello World!");
+        }
     }
-    h1 { font-size: 3.8em; color: #97e372; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #97e372; }
-    h3 { text-align: center; color: #97e372; }
-    a { color: #97e372; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+            </pre>
 
-<body>
-  <a href="http://github.com/orta/Learn-iPhone"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+        </div>
 
-  <div id="container">
+        <div class="slide">
+            <h1>Object Oriented Programming 101</h1>
+            <h2>Classes are great. We use them to model things.</h2>
+            <p>Wanna make a chess game? Then you'll probably want to create a class for each of the types of pieces on the board, and a class for the board board itself.</p>
+            <p>In our last examples: String is a class.</p>
 
-    <div class="download">
-      <a href="http://github.com/orta/Learn-iPhone/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/orta/Learn-iPhone/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+            <p>Objects are great because we can have lots of similar objects either inherit a lot of behavior from each other, for example. You may want to make a driving game. You can make a car object, then have other cars inherit from it and do more with the object.</p>
 
-    <h1><a href="http://github.com/orta/Learn-iPhone">Learn-iPhone</a>
-      <span class="small">by <a href="http://github.com/orta">orta</a></span></h1>
+            <h4 class="code_heading">Car object (psudo code)</h4>
+            <pre class="brush: cpp">
+                class Car {
+                    wheels = 4
+                    speed = 10
 
-    <div class="description">
-      Get to grips iPhone Dev from small amounts of programming experience
-    </div>
+                    drive(){
+                        go_forwards( speed )
+                    }
 
-    <h2>Contact</h2>
-<p>Orta (orta.therox@gmail.com)<br/>      </p>
+                    honk(){
+                        say "beeep"
+                    }
+                }
+            </pre>
 
+        </div>
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/orta/Learn-iPhone/zipball/master">zip</a> or
-      <a href="http://github.com/orta/Learn-iPhone/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/orta/Learn-iPhone</pre>
-    </p>
+        <div class="slide">
+            <p>We can take the car object and extend it to make different types of cars without having to re-write large chunks of code.</p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/orta/Learn-iPhone">orta/Learn-iPhone</a>
-    </div>
+            <h4 class="code_heading">Truck object (psudo code)</h4>
+            <pre class="brush: cpp">
+                class Truck extends Car {
+                    speed = 5
 
-  </div>
+                    honk(){
+                        say "HOOOOONKKKKK"
+                    }
+                }
+            </pre>
+            <p>or a super fast car</p>
+            <h4 class="code_heading">Ortamobile object (psudo code)</h4>
+            <pre class="brush: cpp">
+                class Ortamobile extends Car {
+                    speed = 200
 
-  
-</body>
+                    honk(){
+                        say "neeeawwwnggggg"
+                    }
+                }
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h2>iOS / Mac OS X we use objective-c. It's pretty crazy.</h2>
+            <p>Like C++ objects we use Header files. These files are a way of showing what the object will do, so you can quickly get an overview of responsabilites.</p>
+            <h4 class="code_heading">Car Class ( Obj-C Header )</h4>
+
+            <pre class="brush: objc">
+#import < Foundation/Foundation.h>
+
+@interface Car : NSObject(
+  // object variables go here
+  int speed;
+  int wheels;
+)
+
+// object functions ( or methods ) go outside
+-(void)drive;
+-(void)honk;
+
+@end
+            </pre>
+            <p>After looking at this we can tell that a car has a speed variable, and a wheels variable, though we don't know what they are. Because we cannot set their values in the header.</p>
+
+        </div>
+<!-- 
+        <div class="slide">
+            <h1>Incremental Slides</h1>
+            <p>Hit next</p>
+            <p class="incremental">Every "next slide" action builds up the slide</p>
+            <p class="incremental">element..</p>
+            <p class="incremental">by..</p>
+            <p class="incremental">element.</p>
+            <p class="incremental">For every element that has the incremental class on the slide.</p>
+            <p class="incremental">That's it for now, enjoy!</p>
+        </div> -->
+
+        <div class="layout" data-name="default">
+            <content></content>
+            
+        </div>
+
+        <div class="layout nofooter" data-name="alt">
+            <content></content>
+        </div>
+    </body>
 </html>
