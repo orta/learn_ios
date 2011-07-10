@@ -37,6 +37,7 @@
             h1, h2, li, p{
                 margin-bottom: 1em;
             }
+
         </style>
         <!-- Slippy init code -->
         <script type="text/javascript">
@@ -83,24 +84,24 @@
 
             <h4 class="code_heading">Cpp - Objects Optional</h4>
             <pre class="brush: cpp">
-    #include < iostream >
+            #include < iostream>
 
-    int main()
-    {
-        const std::string message = "Hello, world";
-        std::cout << message;
-        return 0;
-    }
+            int main()
+            {
+                const std::string message = "Hello, world";
+                std::cout << message;
+                return 0;
+            }
             </pre>
             <p>or</p>
             <h4 class="code_heading">Java - Forced use of Objects</h4>
             <pre class="brush: java">
-    class myfirstjavaprog
-    {  
-        public static void main(String args[]) {
-            System.out.println("Hello World!");
-        }
-    }
+                class myfirstjavaprog
+                {  
+                    public static void main(String args[]) {
+                        System.out.println("Hello World!");
+                    }
+                }
             </pre>
 
         </div>
@@ -159,38 +160,54 @@
 
         <div class="slide">
             <h2>iOS / Mac OS X we use objective-c. It's pretty crazy.</h2>
-            <p>Like C++ objects we use Header files. These files are a way of showing what the object will do, so you can quickly get an overview of responsabilites.</p>
-            <h4 class="code_heading">Car Class ( Obj-C Header )</h4>
+            <p>Like C++ objects we use Header files. These files are a way of showing what the object will do, so you can quickly get an overview of responsibilities.</p>
+            <div class="incremental">
 
-            <pre class="brush: objc">
-#import < Foundation/Foundation.h>
+                <h4 class="code_heading ">Car.h ( Obj-C Header )</h4>
+                <pre class=" brush: objc">
+                    #import < Foundation/Foundation.h>
 
-@interface Car : NSObject(
-  // object variables go here
-  int speed;
-  int wheels;
-)
+                    @interface Car : NSObject(
+                      // object variables go here
+                      int speed;
+                    )
 
-// object functions ( or methods ) go outside
--(void)drive;
--(void)honk;
+                    // object functions ( or methods ) go outside
+                    -(void)drive;
+                    -(void)honk;
 
-@end
-            </pre>
-            <p>After looking at this we can tell that a car has a speed variable, and a wheels variable, though we don't know what they are. Because we cannot set their values in the header.</p>
+                    @end
+                </pre>
+                <p>After looking at this we can tell that a car has a speed variable, and a wheels variable, though we don't know what they are. Because we cannot set their values in the header.</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <h2>Its complement is the implementation file.</h2>
+            
+            <h4 class="code_heading ">Car.m ( Obj-C Implementation )</h4>
+            <pre class=" brush: objc">
+            #import "Car.h"
+
+            @implementation Car
+
+            -(id)init {
+                self = [super init];
+                speed = 10;
+                wheels = 4;
+                return self;
+            }
+
+            -(void) honk {
+                NSLog(@"Beep");
+            }
+
+            @end
+        </pre>
+        
+        <p> NSLog() is like cout, or like println it lets us write things out to the debug log.</p>
 
         </div>
-<!-- 
-        <div class="slide">
-            <h1>Incremental Slides</h1>
-            <p>Hit next</p>
-            <p class="incremental">Every "next slide" action builds up the slide</p>
-            <p class="incremental">element..</p>
-            <p class="incremental">by..</p>
-            <p class="incremental">element.</p>
-            <p class="incremental">For every element that has the incremental class on the slide.</p>
-            <p class="incremental">That's it for now, enjoy!</p>
-        </div> -->
 
         <div class="layout" data-name="default">
             <content></content>
