@@ -10,4 +10,4 @@ XCode holds all your project files, you can see in there a few m files, a few h 
 The xib file is an InterfaceBuilder file, and it is what you use to connect objects together and to make your shiney interfaces. You can also spot a few frameworks included at the bottom.
 
 
-!/assets/images/xcode3.jpg(XCode 3)!
+!assets/images/xcode3.jpg(XCode 3)!

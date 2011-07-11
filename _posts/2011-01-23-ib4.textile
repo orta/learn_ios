@@ -10,4 +10,4 @@ Interface Builder is the application that is used to visually set your applicati
 For almost everything you do for applications you'll be working with xib files and thus using Interface Builder. So you'll get pretty familiar with it.
 
 
-!/assets/images/ib.jpg(Interface Builder)!
+!assets/images/ib.jpg(Interface Builder)!
