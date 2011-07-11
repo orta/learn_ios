@@ -69,9 +69,18 @@ layout: nil
         </style>
     </head>
     <body>
-        {% for slide in site.posts %}
-            <!-- {{ slide.title }} --> 
-            {{ slide.content }}
+        {% for post in site.posts %}
+            {% if post.slide == no  %}
+                <!-- {{ post.title }} - {{post.slide }} --> 
+              {{ post.content }}
+            {% endif %}
+
+            {% if post.slide %}
+              <div class="slide">
+                 {{ post.content }}
+              </div>
+            {% endif %}
+
         {% endfor %}
         <div class="layout" data-name="default">
             <content></content>
