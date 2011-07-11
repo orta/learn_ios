@@ -32,11 +32,14 @@ layout: nil
                 font-size : 2em;
             }
             
-            h1, h2, li, p{
+            h1, h2, li, p, table{
                 margin-bottom: 1em;
             }
             .code_heading{
                 margin-bottom: -3px !important;
+            }
+            td{
+                padding: 6px;
             }
 
         </style>
@@ -70,8 +73,10 @@ layout: nil
     </head>
     <body>
         {% for post in site.posts %}
+            
+            <!-- {{ post.title }} - {{post.slide }} --> 
+            
             {% if post.slide == no  %}
-                <!-- {{ post.title }} - {{post.slide }} --> 
               {{ post.content }}
             {% endif %}
 

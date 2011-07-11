@@ -3,5 +3,32 @@ title: "what is what"
 slide: true
 ---
 
+h1. So in simple, a Class would look like this 
+ 
 
-h1. This is better
+h4(code_heading).  Car.h ( Obj-C Header )
+
+{% highlight objc %}
+@interface Car : NSObject(
+  // object variables go here
+)
+
+// object functions go outside 
+// but before the @end
+
+@end
+{% endhighlight %}
+
+and
+
+h4(code_heading).  Car.m ( Obj-C Implementation )
+
+{% highlight objc %}
+#import "Car.h"
+
+@implementation Car
+
+// actual methods go here
+
+@end
+{% endhighlight %}
