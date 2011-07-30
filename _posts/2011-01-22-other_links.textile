@@ -1,0 +1,16 @@
+---
+title: "interface builder 4"
+slide: true
+---
+
+h1. What now? Read these
+
+h2. "Cocoa Dev Central":http://cocoadevcentral.com/
+
+h2. "Cocoa Literature":http://osx.hyperjeff.net/Reference/CocoaArticles
+
+Wonder how I learned this all? Apple have great documentation
+
+h2. "iOS Dev Center":http://developer.apple.com/devcenter/ios/index.action
+
+h2. "Your First iOS Application":http://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhone101/Articles/00_Introduction.html
