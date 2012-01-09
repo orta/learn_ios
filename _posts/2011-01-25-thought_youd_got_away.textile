@@ -5,10 +5,10 @@ slide: true
 
 h1. thought that was all? 
  
-So, that's just the language. Let's talk about the tools. We use two applications to make iOS apps. Those being XCode 3 and Interface Builder. 
+So, that's just the language. Let's talk about the tools. We use two applications to make iOS apps. Those being XCode and Interface Builder. 
 
 |_. name|_. meaning|
 |XCode| XCode is the tool you'll be writing all your code in, you may have used Visual Studio or Eclipse before, it's like that, but made by Apple. XCode is for handling all of the code aspects of writing your application; like your header (.h) and implementation (.m) files. |
-|Interface Builder| Interface Builder is the tool that handles all the design and hooking up between objects in UIKit/Cocoa it's a completely seperate application, so in order that Interface Builder sees the latest versions of your header files you have to save them in XCode. |
+|Interface Builder| Interface Builder is the tool that handles all the design think of it as you would Photoshop we'll be using this a lot in our apps. |
 
 !assets/images/xcode_ib.jpg(XCode and Interface Builder)!
