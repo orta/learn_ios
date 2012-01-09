@@ -2,42 +2,34 @@
 ---
 
 <div class="slide">
-    <h1>Learning iPhone programming</h1>
+    <h1>A quick overview for iPhone programming</h1>
     <h2></h2>
     <ul>
-        <li>For this you must know some programming, or be pretty damn smart. We'll be going fast, leaving a lot of dead projects behind us. Don't worry. There'll be more to take their place.</li>
-        
-        <li>Press left / right to move through pages.</li>
+        <li>Some people know everything about programming, some people know nothing.</li>
     </ul>
     <img src="http://orta.github.com/assets/images/iphone/buttons.jpg">
 </div>
 
 
 <div class="slide">
-    <h1>So let's look at what you know</h1>
+    <ul>
+        <li>Programmers are lazy.</li>
+        <li>Don't repeat yourself.</li>
+        <li>We use objects and classes.</li>
+    </ul>
+</div>
 
-    <h4 class="code_heading">Cpp - Objects Optional</h4>
+<div class="slide">
+    <h1>Let's look at some code</h1>
+
+    <h4 class="code_heading">Objective C from one of my projects</h4>
     {% highlight cpp %}
+    
+    Player *player = [Player sharedPlayer];
+    player.damageRange = NSMakeRange(1, 3);
+    player.maxHealth = 10;
+    player.health = 10;
+    player.money = 20;
 
-	#include < iostream>
-
-	int main()
-	{
-	    const std::string message = "Hello, world";
-	    std::cout << message;
-	    return 0;
-	}
-
-	{% endhighlight %}
-	<p>or</p>
-	<h4 class="code_heading">Java - Forced use of Objects</h4>
-	{% highlight java %}
-	class myfirstjavaprog
-	{  
-	    public static void main(String args[]) {
-	        System.out.println("Hello World!");
-	    }
-	}
-    {% endhighlight %}
-
+  {% endhighlight %}
 </div>
